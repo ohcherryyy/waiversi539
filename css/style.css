@@ -29,59 +29,104 @@ header {
 } */
 
 @media screen and (max-width:750px) {
-body {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
+    body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-body main img {
-    width: 100%;
-}
+    body main img {
+        overflow: hidden;
+    }
 
-body .nav_links {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-}
+    body .nav_links {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
 
-body .nav_links li {
-    padding-bottom: 5px;
-}
+    body .nav_links li {
+        padding-bottom: 5px;
+    }
 
-body .nav_links li a:focus {
-    color: #50C7C7;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #50C7C7;
-}
+    body .nav_links li a:focus {
+        color: #50C7C7;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: #50C7C7;
+    }
 
-body .nav_links li a:hover {
-    color: #50C7C7;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #50C7C7
-}
+    body .nav_links li a:hover {
+        color: #50C7C7;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: #50C7C7
+    }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: repeat(5,auto);
-    row-gap: 15px;
-    grid-template-areas: "a a a" 'b c .' 'd e .' 'f g .' 'h i .';
-}
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: repeat(5, auto);
+        row-gap: 15px;
+        /* grid-template-areas: "a a a" 'b c .' 'd e .' 'f g .' 'h i .'; */
+    }
 
-#main{
-    background-image: url(../images/header.jpg);
-    background-attachment: fixed;
-    background-size: auto 400px;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
+    #main {
+        background-image: url(../images/header.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        grid-column: 1/4;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 
-#main h1{
-    color: white;
-}
+    #main h1 {
+        color: white;
+    }
+
+    .about-image,
+    .method-image,
+    .clients-image,
+    .contact-image {
+        grid-column: 1/4;
+        /* height: 750px;
+        overflow: hidden; */
+    }
+
+    .about-image,
+    .method-image,
+    .clients-image,
+    .contact-image img {
+        height: 700px;
+        overflow: hidden;
+    }
+
+    .text-block {
+        grid-column: 2/3;
+        place-self: center center;
+    }
+
+    .about,
+    .about-image {
+        grid-row: 2/3;
+    }
+
+    .method,
+    .method-image {
+        grid-row: 3/4;
+    }
+
+    .clients,
+    .clients-image {
+        grid-row: 4/5;
+    }
+
+    .contact,
+    .contact-image {
+        grid-row: 5/6;
+    }
 
 }
 
