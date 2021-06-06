@@ -4,44 +4,85 @@
 a.skip, header, .nav_links, .container,
 .intro, html, .text-block, etc.*/
 
-a.skip{
+a.skip {
     top: 40px;
     display: none;
 }
 
-body:hover .skip{
-    display: block;
+header {
+    display: flex;
+    /* display: -webkit-flex; */
+    flex-direction: column;
+    align-items: center;
 }
 
+#logo {
+    width: 50px;
+    animation-name: logomove;
+    animation-duration: 1s;
+    -webkit-animation-name: logomove;
+    -webkit-animation-duration: 1s;
+}
+
+/* body:hover .skip{
+    display: block;
+} */
+
 @media screen and (max-width:750px) {
-    body {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-    body main img {
-        width: 100%;
-    }
+body main img {
+    width: 100%;
+}
 
-    body .nav_links {
-        display: flex;
-        text-align: center;
-        justify-content: flex-end;
-        flex-flow: wrap;
-    }
+body .nav_links {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
 
-    body .nav_links li a:focus {
-        color: #50C7C7;
-    }
+body .nav_links li {
+    padding-bottom: 5px;
+}
 
-    body .nav_links li a:hover {
-        color: #50C7C7;
-    }
+body .nav_links li a:focus {
+    color: #50C7C7;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #50C7C7;
+}
 
-    .container {
-        display: grid;
-    }
+body .nav_links li a:hover {
+    color: #50C7C7;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #50C7C7
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: repeat(5,auto);
+    row-gap: 15px;
+    grid-template-areas: "a a a" 'b c .' 'd e .' 'f g .' 'h i .';
+}
+
+#main{
+    background-image: url(../images/header.jpg);
+    background-attachment: fixed;
+    background-size: auto 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#main h1{
+    color: white;
+}
+
 }
 
 
@@ -49,5 +90,15 @@ body:hover .skip{
 @media screen and (min-width:750px) {
     body {
         background-color: red;
+    }
+}
+
+@-webkit-keyframes logomove {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 50px;
     }
 }
