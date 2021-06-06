@@ -148,12 +148,12 @@ header {
     }
 }
 
-@keyframes logomove{
-    from{
+@keyframes logomove {
+    from {
         width: 0px;
     }
 
-    to{
+    to {
         width: 50px;
     }
-} 
+}
