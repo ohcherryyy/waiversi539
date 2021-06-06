@@ -147,3 +147,13 @@ header {
         width: 50px;
     }
 }
+
+@keyframes logomove{
+    from{
+        width: 0px;
+    }
+
+    to{
+        width: 50px;
+    }
+} 
