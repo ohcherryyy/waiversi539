@@ -35,7 +35,7 @@ header {
         flex-direction: column;
     }
 
-    body main img {
+    body main {
         overflow: hidden;
     }
 
