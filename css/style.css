@@ -3,3 +3,32 @@
 /*Some selectors you may need include are
 a.skip, header, .nav_links, .container,
 .intro, html, .text-block, etc.*/
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body main img {
+    width: 100%;
+}
+
+body .nav_links {
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    flex-flow: wrap;
+}
+
+body .nav_links li a:focus {
+    color: #50C7C7;
+}
+
+body .nav_links li a:hover {
+    color: #50C7C7;
+}
+
+.container {
+    display: grid;
+}
