@@ -40,7 +40,6 @@ body .nav_links li a:hover {
 @media screen and (max-width:750px) {
     header {
         display: flex;
-        /* display: -webkit-flex; */
         flex-direction: column;
         align-items: center;
     }
@@ -293,6 +292,15 @@ body .nav_links li a:hover {
 }
 
 @media print{
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #logo{
+        align-self: center;
+    }
+
     body .nav_links {
         display: flex;
         text-align: center;
