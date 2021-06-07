@@ -5,8 +5,12 @@ a.skip, header, .nav_links, .container,
 .intro, html, .text-block, etc.*/
 
 a.skip {
-    top: 40px;
-    display: none;
+    top: -40px;
+    position: absolute;
+}
+
+a.skip:focus{
+    top: 0;
 }
 
 header {
@@ -130,11 +134,11 @@ header {
 
 }
 
-
-
-@media screen and (min-width:750px) {
-    body {
-        background-color: red;
+@media screen and (max-width:1125px) {
+    body .nav_links {
+        display: flex;
+        text-align: center;
+        flex-direction: row;
     }
 }
 
