@@ -28,21 +28,31 @@ header {
     -webkit-animation-duration: 1s;
 }
 
-/* body:hover .skip{
-    display: block;
-} */
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body main {
+    overflow: hidden;
+}
+
+body .nav_links li a:focus {
+    color: #50C7C7;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #50C7C7;
+}
+
+body .nav_links li a:hover {
+    color: #50C7C7;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #50C7C7
+}
 
 @media screen and (max-width:750px) {
-    body {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    body main {
-        overflow: hidden;
-    }
-
     body .nav_links {
         display: flex;
         text-align: center;
@@ -51,20 +61,6 @@ header {
 
     body .nav_links li {
         padding-bottom: 5px;
-    }
-
-    body .nav_links li a:focus {
-        color: #50C7C7;
-        text-decoration: underline;
-        text-decoration-style: dotted;
-        text-decoration-color: #50C7C7;
-    }
-
-    body .nav_links li a:hover {
-        color: #50C7C7;
-        text-decoration: underline;
-        text-decoration-style: dotted;
-        text-decoration-color: #50C7C7
     }
 
     .container {
@@ -95,8 +91,6 @@ header {
     .clients-image,
     .contact-image {
         grid-column: 1/4;
-        /* height: 750px;
-        overflow: hidden; */
     }
 
     .about-image,
@@ -134,11 +128,75 @@ header {
 
 }
 
-@media screen and (max-width:1125px) {
+@media screen and (min-width: 750px) and (max-width:1250px){
     body .nav_links {
         display: flex;
         text-align: center;
         flex-direction: row;
+    }
+
+    body .nav_links li {
+        padding: 10px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 50px minmax(75px,max-content) 500px minmax(75px,max-content) 50px;
+        grid-template-rows: repeat(5, 400px);
+    }
+
+    #main {
+        background-image: url(../images/header.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        grid-column: 1/6;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #main h1 {
+        color: white;
+    }
+
+    .about-image,
+    .method-image,
+    .clients-image,
+    .contact-image img {
+        overflow: hidden;
+    }
+
+    .about, .clients, .method-image, .contact-image{
+        grid-column: 3/5;
+    }
+
+    .about-image, .clients-image, .method, .contact{
+        grid-column: 2/4;
+    }
+
+    .about,
+    .about-image {
+        grid-row: 2/3;
+    }
+
+    .method,
+    .method-image {
+        grid-row: 3/4;
+    }
+
+    .clients,
+    .clients-image {
+        grid-row: 4/5;
+    }
+
+    .contact,
+    .contact-image {
+        grid-row: 5/6;
+    }
+
+    .text-block{
+        place-self: center center;
     }
 }
 
