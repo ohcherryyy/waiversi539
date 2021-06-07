@@ -13,21 +13,6 @@ a.skip:focus{
     top: 0;
 }
 
-header {
-    display: flex;
-    /* display: -webkit-flex; */
-    flex-direction: column;
-    align-items: center;
-}
-
-#logo {
-    width: 50px;
-    animation-name: logomove;
-    animation-duration: 1s;
-    -webkit-animation-name: logomove;
-    -webkit-animation-duration: 1s;
-}
-
 body {
     width: 100%;
     display: flex;
@@ -53,6 +38,21 @@ body .nav_links li a:hover {
 }
 
 @media screen and (max-width:750px) {
+    header {
+        display: flex;
+        /* display: -webkit-flex; */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #logo {
+        width: 50px;
+        animation-name: logomove;
+        animation-duration: 1s;
+        -webkit-animation-name: logomove;
+        -webkit-animation-duration: 1s;
+    }
+    
     body .nav_links {
         display: flex;
         text-align: center;
@@ -74,7 +74,7 @@ body .nav_links li a:hover {
     #main {
         background-image: url(../images/header.jpg);
         background-attachment: fixed;
-        background-size: cover;
+        background-size: auto 100%;
         background-position: center center;
         background-repeat: no-repeat;
         grid-column: 1/4;
@@ -128,7 +128,23 @@ body .nav_links li a:hover {
 
 }
 
-@media screen and (min-width: 750px) and (max-width:1250px){
+@media screen and (min-width: 750px) and (max-width:1125px){
+    header {
+        display: flex;
+        /* display: -webkit-flex; */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    #logo {
+        width: 50px;
+        animation-name: logomove;
+        animation-duration: 1s;
+        -webkit-animation-name: logomove;
+        -webkit-animation-duration: 1s;
+    }
+    
     body .nav_links {
         display: flex;
         text-align: center;
@@ -200,6 +216,81 @@ body .nav_links li a:hover {
     }
 }
 
+@media screen and (min-width:1125px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #logo {
+        width: 50px;
+        animation-name: logomove-table;
+        animation-duration: 1s;
+        -webkit-animation-name: logomove-table;
+        -webkit-animation-duration: 1s;
+    }
+    
+    body .nav_links {
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+    }
+
+    body .nav_links li {
+        padding: 10px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 15px 75px 1fr 25px 1fr 75px 15px;
+        grid-template-rows: repeat(3, 400px);
+    }
+
+    #main {
+        background-image: url(../images/header.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        grid-column: 1/8;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #main h1 {
+        color: white;
+    }
+
+    .about-image, .clients-image{
+        grid-column: 2/7;
+    }
+
+    .method-image, .contact-image{
+        display: none;
+    }
+
+    .about, .clients{
+        grid-column: 3/4;
+    }
+
+    .method, .contact{
+        grid-column: 5/6;
+    }
+
+    .about, .method,.about-image{
+        grid-row: 2/3;
+    }
+
+    .clients, .contact, .clients-image{
+        grid-row: 3/4;
+    }
+
+    .text-block{
+        place-self: center center;
+    }
+}
+
 @-webkit-keyframes logomove {
     from {
         width: 0px;
@@ -217,5 +308,33 @@ body .nav_links li a:hover {
 
     to {
         width: 50px;
+    }
+}
+
+@-webkit-keyframes logomove-table{
+    0% {
+        width: 50px;
+    }
+    50%{
+        width: 150px;
+        left: 450px;
+    }
+    100%{
+        width: 50px;
+    }
+}
+
+@keyframes logomove-table{
+    0% {
+        width: 50px;
+        left: 0px;
+    }
+    50%{
+        width: 150px;
+        left: 450px;
+    }
+    100%{
+        width: 50px;
+        left: 0px;
     }
 }
